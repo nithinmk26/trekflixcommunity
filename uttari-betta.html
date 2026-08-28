@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uttari Betta Sunrise Trek + Kayaking | Trekflix</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <style>
+    .detail-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      background: url("uttari-betta.jpg") center/cover no-repeat;
+      color: #fff;
+      padding: 120px 0 48px;
+    }
+    .detail-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .detail-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .detail-hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .detail-hero p {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-bottom: 20px;
+    }
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      font-weight: 500;
+    }
+    .detail-meta span {
+      background: rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+    .detail-content {
+      padding: 60px 0;
+      background: #f9fafb;
+    }
+    .detail-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .detail-main {
+      flex: 2 1 600px;
+    }
+    .detail-sidebar {
+      flex: 1 1 280px;
+    }
+    .detail-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    .detail-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0F2B22;
+      margin-bottom: 16px;
+    }
+    .detail-section p {
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+    .detail-list {
+      list-style: disc;
+      padding-left: 20px;
+      color: #4b5563;
+    }
+    .detail-list li {
+      margin-bottom: 10px;
+    }
+    .pickup-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      color: #4b5563;
+    }
+    .pickup-item {
+      display: flex;
+      gap: 12px;
+    }
+    .pickup-time {
+      font-weight: 700;
+      color: #1B4332;
+      min-width: 72px;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+    .info-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F2B22;
+      margin-bottom: 16px;
+    }
+    .info-card .price {
+      margin-bottom: 16px;
+    }
+    .info-card .new {
+      font-size: 32px;
+    }
+    .info-card .old {
+      font-size: 18px;
+    }
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+    .info-card li {
+      padding: 6px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .info-card li:last-child {
+      border-bottom: none;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .detail-hero h1 {
+        font-size: 32px;
+      }
+      .detail-hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="tel:+918984462959">+91 89844 62959</a>
+      <a href="mailto:trekflixcommunity@gmail.com">trekflixcommunity@gmail.com</a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <img src="logo.jpg" alt="Trekflix" class="brand-logo">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li class="dropdown">
+          <a href="index.html#one-day">Bengaluru</a>
+          <ul>
+            <li><a href="index.html#one-day">One Day Treks</a></li>
+            <li><a href="index.html#two-day">Two Day Trips</a></li>
+            <li><a href="index.html#three-day">Three Day Trips</a></li>
+          </ul>
+        </li>
+
+        <li><a href="index.html#contact">Contact Us</a></li>
+        <li class="dropdown">
+          <a href="#more">More</a>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="detail-hero">
+    <div class="detail-hero-overlay"></div>
+    <div class="container detail-hero-content">
+      <h1>Uttari Betta Sunrise Trek + Kayaking</h1>
+      <p>Huthridurga (Santhepete), Karnataka</p>
+      <div class="detail-meta">
+        <span>5/5 (6 Reviews)</span>
+        <span>1 Night 1 Day</span>
+        <span>Group size: 45 / 30 / 20 / 12</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="detail-content">
+    <div class="container detail-layout">
+      <div class="detail-main">
+        <div class="detail-section">
+          <h2>About this trek</h2>
+          <p>
+            Looking for a quick weekend getaway from Bengaluru? Experience the beauty of the Uttari Betta Sunrise Trek, a perfect blend of adventure, nature and tranquility. Just a short drive from the city, this trek offers a refreshing escape into Karnataka’s breathtaking landscapes.
+          </p>
+          <p>
+            Trek through lush trails, visit an ancient stone fort and the Lord Shankareshwar Temple, and witness a magical sunrise from the summit. After a self-funded breakfast, unwind with a kayaking session before heading back to Bangalore.
+          </p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Highlights</h2>
+          <ul class="detail-list">
+            <li>5 km scenic trek through rocky terrain and serene landscapes</li>
+            <li>Historical fort and Lord Shankareshwar Temple at the summit</li>
+            <li>Stunning sunrise views over the surrounding valleys</li>
+            <li>Kayaking session after breakfast at 9:00 AM</li>
+            <li>Convenient pickup and drop-off from multiple Bangalore locations</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Itinerary</h2>
+          <div class="timeline">
+            <div class="timeline-row">
+              <span class="time">11:00 PM</span>
+              <span>Pickup from Benniganahalli Metro Station, Tin Factory</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">11:20 PM</span>
+              <span>Kalamandir, Marathahalli</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">11:35 PM</span>
+              <span>Akme Harmony, Bellandur</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">11:50 PM</span>
+              <span>Silkboard Bus Stop</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:00 AM</span>
+              <span>Udupi Garden Signal, BTM</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:15 AM</span>
+              <span>Banashankari Bus Stop</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:30 AM</span>
+              <span>Kathriguppe Circle</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">03:30 AM</span>
+              <span>Arrive at the base of Uttari Betta and relax</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">04:00 AM</span>
+              <span>Begin the ascent to the peak</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">05:30 AM</span>
+              <span>Reach the summit and witness the sunrise</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">07:00 AM</span>
+              <span>Descend towards the base</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">08:00 AM</span>
+              <span>Self-funded breakfast break</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">09:00 AM</span>
+              <span>Kayaking after breakfast</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:30 PM</span>
+              <span>Leaving back to Bangalore</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>Pickup points</h2>
+          <div class="pickup-list">
+            <div class="pickup-item"><span class="pickup-time">11:00 PM</span><span>Benniganahalli Metro Station, Tin Factory</span></div>
+            <div class="pickup-item"><span class="pickup-time">11:20 PM</span><span>Kalamandir, Marathahalli</span></div>
+            <div class="pickup-item"><span class="pickup-time">11:35 PM</span><span>Akme Harmony, Bellandur</span></div>
+            <div class="pickup-item"><span class="pickup-time">11:50 PM</span><span>Silkboard Bus Stop</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:00 AM</span><span>Udupi Garden Signal, BTM</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:15 AM</span><span>Banashankari Bus Stop</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:30 AM</span><span>Kathriguppe Circle</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:45 AM</span><span>Gopalan Arcade Mall RR Nagar</span></div>
+            <div class="pickup-item"><span class="pickup-time">01:15 AM</span><span>Guraguntepalya Signal, Yeshwanthpur</span></div>
+            <div class="pickup-item"><span class="pickup-time">01:30 AM</span><span>8th Mile Circle, Dasarhalli</span></div>
+          </div>
+          <p style="margin-top: 16px; font-size: 14px;">Pickup timings are tentative and may change slightly.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="detail-section">
+            <h2>Inclusions</h2>
+            <ul class="detail-list">
+              <li>Round-trip transportation from Bangalore (Non-AC)</li>
+              <li>Experienced trek leaders</li>
+              <li>First aid kit</li>
+              <li>Kayaking session</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h2>Exclusions</h2>
+            <ul class="detail-list">
+              <li>Any type of insurance coverage</li>
+              <li>Personal expenditure (snacks, water, etc.)</li>
+              <li>Breakfast and other meals</li>
+              <li>Anything not specifically mentioned</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>Things to carry</h2>
+          <ul class="detail-list">
+            <li>Small backpack for essentials</li>
+            <li>Water bottles (1-2 liters)</li>
+            <li>Raincoat or poncho</li>
+            <li>Comfortable trekking shoes with good grip</li>
+            <li>Torch or headlamp</li>
+            <li>Portable charger</li>
+            <li>Energy boosters and snacks</li>
+            <li>Personal medication</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="info-card">
+          <h3>Booking</h3>
+          <div class="price">
+            <span class="old">₹1499</span>
+            <span class="new">₹1099</span>
+          </div>
+          <ul>
+            <li>Duration: 1 Night 1 Day</li>
+            <li>Difficulty: Easy to Moderate</li>
+            <li>Distance: ~5 km</li>
+            <li>Altitude: ~3,700 ft</li>
+            <li>Language: English</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%;">Book Now</button>
+        </div>
+
+        <div class="info-card">
+          <h3>Need help?</h3>
+          <p style="margin-bottom: 8px;">Call or WhatsApp us for any queries.</p>
+          <p><a href="tel:+918984462959" style="color: #1B4332; font-weight: 700;">+91 89844 62959</a></p>
+          <p><a href="mailto:trekflixcommunity@gmail.com" style="color: #1B4332; font-weight: 700;">trekflixcommunity@gmail.com</a></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="cta" id="contact">
+    <div class="container cta-inner">
+      <div class="cta-text">
+        <h2>Ready for your next adventure?</h2>
+        <p>Book the Uttari Betta Sunrise Trek + Kayaking today and make unforgettable memories.</p>
+      </div>
+      <a href="tel:+918984462959" class="btn-primary">Call to Book</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="logo.jpg" alt="Trekflix" class="footer-logo">
+        <p class="footer-tagline">Explore. Trek. Repeat.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#one-day">Bengaluru Treks</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>+91 89844 62959</p>
+        <p>trekflixcommunity@gmail.com</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Trekflix. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

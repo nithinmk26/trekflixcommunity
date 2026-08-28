@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trekflix - Explore. Trek. Repeat.</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="tel:+918984462959">+91 89844 62959</a>
+      <a href="mailto:trekflixcommunity@gmail.com">trekflixcommunity@gmail.com</a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <img src="logo.jpg" alt="Trekflix" class="brand-logo">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+          <a href="#one-day">Bengaluru</a>
+          <ul>
+            <li><a href="#one-day">One Day Treks</a></li>
+            <li><a href="#two-day">Two Day Trips</a></li>
+            <li><a href="#three-day">Three Day Trips</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li class="dropdown">
+          <a href="#more">More</a>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Your Favorite Destination for Travel Connections!</h1>
+      <p>Find what makes you happy anytime, anywhere</p>
+      <form class="search-widget" id="searchForm">
+        <div class="field">
+          <label for="location">Location</label>
+          <select id="location" name="location">
+            <option>Karnataka</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="checkin">Date</label>
+          <input type="date" id="checkin" name="checkin">
+        </div>
+        <div class="field">
+          <label for="checkout">Check out</label>
+          <input type="date" id="checkout" name="checkout">
+        </div>
+        <button type="submit" class="btn-search">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section class="trips" id="one-day">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">1 Day Treks</span>
+          <h2>One Day Treks from Bengaluru</h2>
+          <p>Weekend sunrise treks near Bangalore — pick your adventure and go!</p>
+        </div>
+        <div class="card-grid">
+          <a href="uttari-betta.html" class="feature-card">
+            <div class="feature-image" style="background: url('uttari-betta.jpg') center/cover no-repeat;">
+              <span class="badge">-27%</span>
+            </div>
+            <div class="feature-body">
+              <span class="location">Huthridurga, Karnataka</span>
+              <div class="feature-title-row">
+                <h3>Uttari Betta Sunrise Trek + Kayaking</h3>
+                <div class="price">
+                  <span class="old">₹1499</span>
+                  <span class="new">₹1099</span>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="rating">5 (6 Reviews)</span>
+                <span class="duration">1 Night 1 Day</span>
+              </div>
+              <p class="feature-desc">
+                Trek through lush trails, visit an ancient stone fort, witness a breathtaking sunrise and enjoy kayaking after breakfast.
+              </p>
+              <div class="btn-primary book-btn">View Details</div>
+            </div>
+          </a>
+
+          <a href="nandi-hills.html" class="feature-card">
+            <div class="feature-image" style="background: url('nandi-hills.jpg') center/cover no-repeat;">
+              <span class="badge">-35%</span>
+            </div>
+            <div class="feature-body">
+              <span class="location">Nandi Hills, Karnataka</span>
+              <div class="feature-title-row">
+                <h3>Nandi Hills Sunrise Trek</h3>
+                <div class="price">
+                  <span class="old">₹997</span>
+                  <span class="new">₹648</span>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="rating">5 (1 Review)</span>
+                <span class="duration">1 Night 1 Day</span>
+              </div>
+              <p class="feature-desc">
+                Begin your day above the clouds with one of the most iconic sunrises near Bangalore — perfect for beginners and nature lovers.
+              </p>
+              <div class="btn-primary book-btn">View Details</div>
+            </div>
+          </a>
+
+          <a href="madhugiri.html" class="feature-card">
+            <div class="feature-image" style="background: url('madhugiri.jpg') center/cover no-repeat;">
+              <span class="badge">-35%</span>
+            </div>
+            <div class="feature-body">
+              <span class="location">Madhugiri Betta, Karnataka</span>
+              <div class="feature-title-row">
+                <h3>Madhugiri Fort Sunrise Trek</h3>
+                <div class="price">
+                  <span class="old">₹997</span>
+                  <span class="new">₹648</span>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="rating">New Trek</span>
+                <span class="duration">1 Night 1 Day</span>
+              </div>
+              <p class="feature-desc">
+                Conquer Asia's second-largest monolith, explore the ancient Vijayanagara-era fort, and enjoy panoramic summit views.
+              </p>
+              <div class="btn-primary book-btn">View Details</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trips bg-light" id="two-day">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">2 Day Trip</span>
+          <h2>Weekend Getaways from Bengaluru</h2>
+          <p>Multi-day escapes for when you need more than just a day.</p>
+        </div>
+        <div class="card-grid">
+          <a href="wayanad.html" class="feature-card">
+            <div class="feature-image" style="background: url('wayanad.jpg') center/cover no-repeat;">
+              <span class="badge">-28%</span>
+            </div>
+            <div class="feature-body">
+              <span class="location">Wayanad, Kerala</span>
+              <div class="feature-title-row">
+                <h3>Wayanad Weekend Tour</h3>
+                <div class="price">
+                  <span class="old">₹5,447</span>
+                  <span class="new">₹3,944</span>
+                </div>
+              </div>
+              <div class="meta">
+                <span class="rating">5 (3 Reviews)</span>
+                <span class="duration">2 Day 2 Night</span>
+              </div>
+              <p class="feature-desc">
+                Waterfalls, glass bridge, ziplining, ancient caves and dam-side serenity — the perfect 2-day mix of thrill and tranquility.
+              </p>
+              <div class="btn-primary book-btn">View Details</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trips" id="three-day">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">3 Day Trips</span>
+          <h2>Backpacking Trips from Bangalore</h2>
+          <p>Hand-picked multi-day experiences for the curious traveler.</p>
+        </div>
+        <div class="coming-soon">
+          <h3>Coming Soon</h3>
+          <p>Exciting 3-day backpacking trips are on the way. Stay tuned for updates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-inner">
+        <div class="cta-text">
+          <h2>Ready for your next adventure?</h2>
+          <p>Join thousands of happy trekkers exploring the best weekend getaways.</p>
+        </div>
+        <form class="cta-form" id="newsletterForm">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" class="btn-primary">Get Started</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="logo.jpg" alt="Trekflix" class="footer-logo">
+        <p class="footer-tagline">Explore. Trek. Repeat.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#one-day">Bengaluru Treks</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>+91 89844 62959</p>
+        <p>trekflixcommunity@gmail.com</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Trekflix. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wayanad Weekend Tour | Trekflix</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <style>
+    .detail-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      background: url("wayanad.jpg") center/cover no-repeat;
+      color: #fff;
+      padding: 120px 0 48px;
+    }
+    .detail-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .detail-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .detail-hero h1 {
+      font-size: 44px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .detail-hero p {
+      font-size: 18px;
+      opacity: 0.95;
+      margin-bottom: 20px;
+    }
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      font-weight: 500;
+    }
+    .detail-meta span {
+      background: rgba(255,255,255,0.15);
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+    .detail-content {
+      padding: 60px 0;
+      background: #f9fafb;
+    }
+    .detail-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .detail-main {
+      flex: 2 1 600px;
+    }
+    .detail-sidebar {
+      flex: 1 1 280px;
+    }
+    .detail-section {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    }
+    .detail-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0F2B22;
+      margin-bottom: 16px;
+    }
+    .detail-section p {
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+    .detail-list {
+      list-style: disc;
+      padding-left: 20px;
+      color: #4b5563;
+    }
+    .detail-list li {
+      margin-bottom: 10px;
+    }
+    .pickup-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      color: #4b5563;
+    }
+    .pickup-item {
+      display: flex;
+      gap: 12px;
+    }
+    .pickup-time {
+      font-weight: 700;
+      color: #1B4332;
+      min-width: 72px;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+    .info-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0F2B22;
+      margin-bottom: 16px;
+    }
+    .info-card .price {
+      margin-bottom: 16px;
+    }
+    .info-card .new {
+      font-size: 32px;
+    }
+    .info-card .old {
+      font-size: 18px;
+    }
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+    .info-card li {
+      padding: 6px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .info-card li:last-child {
+      border-bottom: none;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .detail-hero h1 {
+        font-size: 32px;
+      }
+      .detail-hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <a href="tel:+918984462959">+91 89844 62959</a>
+      <a href="mailto:trekflixcommunity@gmail.com">trekflixcommunity@gmail.com</a>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <img src="logo.jpg" alt="Trekflix" class="brand-logo">
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li class="dropdown">
+          <a href="index.html#one-day">Bengaluru</a>
+          <ul>
+            <li><a href="index.html#one-day">One Day Treks</a></li>
+            <li><a href="index.html#two-day">Two Day Trips</a></li>
+            <li><a href="index.html#three-day">Three Day Trips</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#contact">Contact Us</a></li>
+        <li class="dropdown">
+          <a href="#more">More</a>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="detail-hero">
+    <div class="detail-hero-overlay"></div>
+    <div class="container detail-hero-content">
+      <h1>Wayanad Weekend Tour</h1>
+      <p>Wayanad, Kerala, India</p>
+      <div class="detail-meta">
+        <span>5/5 (3 Reviews)</span>
+        <span>2 Day 2 Night</span>
+        <span>Group size: 35</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="detail-content">
+    <div class="container detail-layout">
+      <div class="detail-main">
+        <div class="detail-section">
+          <h2>About this tour</h2>
+          <p>
+            Unplug and dive into the lush beauty of Wayanad, Kerala’s adventure and nature haven. From waterfalls and thrilling glass bridges to ancient caves and dam-side serenity, this 2-day Wayanad Tour promises the perfect mix of thrill and tranquility for your long weekend.
+          </p>
+          <p>
+            Wayanad is known for its misty mountains, waterfalls and historic caves. The trip is ideal for groups, couples and explorers, with the best time to visit from October to May. The road distance from Bangalore is approximately 280 km and takes around 7 to 8 hours.
+          </p>
+        </div>
+
+        <div class="detail-section">
+          <h2>Trip Highlights</h2>
+          <ul class="detail-list">
+            <li>Soochipara Waterfalls</li>
+            <li>900 Kandi Glass Bridge</li>
+            <li>Adventure activities like ziplining, sky cycling and giant swing</li>
+            <li>Banasura Sagar Dam</li>
+            <li>Edakkal Caves</li>
+          </ul>
+        </div>
+
+        <div class="detail-section">
+          <h2>Itinerary</h2>
+          <div class="timeline">
+            <div class="timeline-row">
+              <span class="time">10:00 PM</span>
+              <span>Start from Banashankari, Bengaluru</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">10:15 PM</span>
+              <span>Quick pickup at BTM Layout</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">10:30 PM</span>
+              <span>Next stop, Silk Board</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">10:45 PM</span>
+              <span>Board at Bellandur</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">11:00 PM</span>
+              <span>Assemble at Marathalli</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">11:30 PM</span>
+              <span>Pickup at Tin Factory</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:00 AM</span>
+              <span>Picking up at Indira Nagar</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:10 AM</span>
+              <span>Meet us at Halasuru</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:30 AM</span>
+              <span>Join at Corporation Circle</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:50 AM</span>
+              <span>Board at Mysuru Road Bus Station</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">01:00 AM</span>
+              <span>Quick pickup at RR Nagar Arcade</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">01:30 AM</span>
+              <span>Last pickup at Kengeri Bus Stand</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">09:00 AM</span>
+              <span>Reach homestay, freshen up and have breakfast</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">10:00 AM</span>
+              <span>Visit Soochipara Waterfalls</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:00 PM</span>
+              <span>Lunch and visit 900 Kandi Glass Bridge (jeep ride and glass bridge tickets included)</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">04:00 PM</span>
+              <span>Ziplining, sky cycling and giant swing (self-sponsored adventure activities)</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">06:30 PM</span>
+              <span>Head back to homestay and have dinner</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">07:00 AM</span>
+              <span>Day 2 breakfast, checkout and leave to Banasura Dam</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">10:00 AM</span>
+              <span>Enjoy scenic Banasura Dam (entry tickets included)</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">12:00 PM</span>
+              <span>Head to Edakkal Caves and have lunch on the way</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">03:00 PM</span>
+              <span>Cave exploration at Edakkal Caves (entry tickets included)</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">05:00 PM</span>
+              <span>Board vehicle to reach Bengaluru</span>
+            </div>
+            <div class="timeline-row">
+              <span class="time">10:00 PM</span>
+              <span>Reach Bengaluru</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>Pickup points</h2>
+          <div class="pickup-list">
+            <div class="pickup-item"><span class="pickup-time">10:00 PM</span><span>Banashankari</span></div>
+            <div class="pickup-item"><span class="pickup-time">10:15 PM</span><span>BTM Layout</span></div>
+            <div class="pickup-item"><span class="pickup-time">10:30 PM</span><span>Silk Board</span></div>
+            <div class="pickup-item"><span class="pickup-time">10:45 PM</span><span>Bellandur</span></div>
+            <div class="pickup-item"><span class="pickup-time">11:00 PM</span><span>Marathalli</span></div>
+            <div class="pickup-item"><span class="pickup-time">11:30 PM</span><span>Tin Factory</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:00 AM</span><span>Indira Nagar</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:10 AM</span><span>Halasuru</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:30 AM</span><span>Corporation Circle</span></div>
+            <div class="pickup-item"><span class="pickup-time">12:50 AM</span><span>Mysuru Road Bus Station</span></div>
+            <div class="pickup-item"><span class="pickup-time">01:00 AM</span><span>RR Nagar Arcade</span></div>
+            <div class="pickup-item"><span class="pickup-time">01:30 AM</span><span>Kengeri Bus Stand</span></div>
+          </div>
+          <p style="margin-top: 16px; font-size: 14px;">Drop-off points will be the same as pick-up points.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="detail-section">
+            <h2>Inclusions</h2>
+            <ul class="detail-list">
+              <li>Dormitory accommodation separate for men and women</li>
+              <li>To and fro transport from Bangalore (Non A/C)</li>
+              <li>Experienced Guide from the Tripbae team</li>
+              <li>2 Breakfast, 1 Dinner</li>
+              <li>Jeep ride to 900 Kandi Glass Bridge</li>
+              <li>900 Kandi Glass Bridge tickets</li>
+              <li>Sightseeing entry tickets (Soochipara, Banasura Dam, Edakkal Caves)</li>
+              <li>Basic First Aid Kit</li>
+            </ul>
+          </div>
+          <div class="detail-section">
+            <h2>Exclusions</h2>
+            <ul class="detail-list">
+              <li>Additional adventure / water activities</li>
+              <li>Anything not specifically mentioned above</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h2>Things to carry</h2>
+          <ul class="detail-list">
+            <li>Face masks and hand sanitisers</li>
+            <li>Xerox copy of Aadhar/Voter ID</li>
+            <li>Small backpack for essentials</li>
+            <li>Water bottles 1-2 liters</li>
+            <li>Raincoat and bag covers</li>
+            <li>Comfortable trekking shoes</li>
+            <li>Extra pair of socks and clothes</li>
+            <li>Flip-flops for lazing around</li>
+            <li>Torch / headlamp</li>
+            <li>Portable chargers</li>
+            <li>Energy boosters and snacks</li>
+            <li>Personal medication</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="detail-sidebar">
+        <div class="info-card">
+          <h3>Booking</h3>
+          <div class="price">
+            <span class="old">₹5,447</span>
+            <span class="new">₹3,944</span>
+          </div>
+          <ul>
+            <li>Duration: 2 Day 2 Night</li>
+            <li>Difficulty: Easy</li>
+            <li>Distance: ~280 km from Bangalore</li>
+            <li>Language: English</li>
+          </ul>
+          <button class="btn-primary" style="width: 100%;">Book Now</button>
+        </div>
+
+        <div class="info-card">
+          <h3>Need help?</h3>
+          <p style="margin-bottom: 8px;">Call or WhatsApp us for any queries.</p>
+          <p><a href="tel:+918984462959" style="color: #1B4332; font-weight: 700;">+91 89844 62959</a></p>
+          <p><a href="mailto:trekflixcommunity@gmail.com" style="color: #1B4332; font-weight: 700;">trekflixcommunity@gmail.com</a></p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="cta" id="contact">
+    <div class="container cta-inner">
+      <div class="cta-text">
+        <h2>Ready for your next adventure?</h2>
+        <p>Book the Wayanad Weekend Tour today and explore Kerala’s green paradise.</p>
+      </div>
+      <a href="tel:+918984462959" class="btn-primary">Call to Book</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="logo.jpg" alt="Trekflix" class="footer-logo">
+        <p class="footer-tagline">Explore. Trek. Repeat.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#one-day">Bengaluru Treks</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>+91 89844 62959</p>
+        <p>trekflixcommunity@gmail.com</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Trekflix. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
