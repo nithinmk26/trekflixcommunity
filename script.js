@@ -1,114 +1,255 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Navigation & Mobile Drawer ---
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
-  const searchForm = document.getElementById("searchForm");
-  const newsletterForm = document.getElementById("newsletterForm");
   const dropdowns = document.querySelectorAll(".dropdown");
-  const checkin = document.getElementById("checkin");
-  const checkout = document.getElementById("checkout");
 
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    // Close mobile nav when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove("open");
+      }
+    });
+  }
 
   dropdowns.forEach((drop) => {
     const link = drop.querySelector("a");
-    link.addEventListener("click", (e) => {
-      if (window.innerWidth < 768) {
-        e.preventDefault();
-        drop.classList.toggle("open");
-      }
-    });
+    if (link) {
+      link.addEventListener("click", (e) => {
+        if (window.innerWidth < 768) {
+          e.preventDefault();
+          drop.classList.toggle("open");
+        }
+      });
+    }
   });
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const todayString = today.toLocaleDateString("en-CA");
+  // --- Dynamic Search & Live Filter Widget ---
+  const searchForm = document.getElementById("searchForm");
+  const locationSelect = document.getElementById("locationSelect");
+  const durationSelect = document.getElementById("durationSelect");
+  const difficultySelect = document.getElementById("difficultySelect");
+  const filterPills = document.querySelectorAll(".filter-pill");
+  const featureCards = document.querySelectorAll(".feature-card");
 
-  if (checkin) {
-    checkin.setAttribute("min", todayString);
-    checkin.addEventListener("change", () => {
-      if (!checkin.value) return;
-      const [y, m, d] = checkin.value.split("-").map(Number);
-      const date = new Date(y, m - 1, d);
-      const day = date.getDay();
-      if (day !== 5 && day !== 6) {
-        alert("Please select a Friday or Saturday for the check-in date.");
-        checkin.value = "";
+  function filterTrips(category = "all", location = "all", duration = "all", difficulty = "all") {
+    let visibleCount = 0;
+
+    featureCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category") || "all";
+      const cardLocation = (card.getAttribute("data-location") || "").toLowerCase();
+      const cardDuration = (card.getAttribute("data-duration") || "").toLowerCase();
+      const cardDifficulty = (card.getAttribute("data-difficulty") || "").toLowerCase();
+
+      let matchCategory = category === "all" || cardCategory === category;
+      let matchLocation = location === "all" || cardLocation.includes(location.toLowerCase());
+      let matchDuration = duration === "all" || cardDuration === duration;
+      let matchDifficulty = difficulty === "all" || cardDifficulty === difficulty;
+
+      if (matchCategory && matchLocation && matchDuration && matchDifficulty) {
+        card.style.display = "flex";
+        visibleCount++;
       } else {
-        const nextDay = new Date(date);
-        nextDay.setDate(date.getDate() + 1);
-        if (checkout) checkout.setAttribute("min", nextDay.toLocaleDateString("en-CA"));
+        card.style.display = "none";
       }
     });
+
+    const noResults = document.getElementById("noTripsFound");
+    if (noResults) {
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
   }
 
-  if (checkout) {
-    checkout.setAttribute("min", todayString);
-  }
+  // Filter Pills click handler
+  filterPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      filterPills.forEach((p) => p.classList.remove("active"));
+      pill.classList.add("active");
+      const targetCat = pill.getAttribute("data-filter");
+      filterTrips(targetCat, "all", "all", "all");
+    });
+  });
 
   if (searchForm) {
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const location = document.getElementById("location").value;
-      const checkinVal = checkin ? checkin.value : "";
-      const checkoutVal = checkout ? checkout.value : "";
+      const locVal = locationSelect ? locationSelect.value : "all";
+      const durVal = durationSelect ? durationSelect.value : "all";
+      const diffVal = difficultySelect ? difficultySelect.value : "all";
 
-      if (location !== "Karnataka") {
-        alert("Sorry, we currently only offer treks in Karnataka.");
-        return;
+      filterTrips("all", locVal, durVal, diffVal);
+
+      // Smooth scroll to trip cards section
+      const tripsSec = document.getElementById("tripsSection");
+      if (tripsSec) {
+        tripsSec.scrollIntoView({ behavior: "smooth" });
       }
+    });
+  }
 
-      if (!checkinVal || !checkoutVal) {
-        alert("Please select both check-in and check-out dates.");
-        return;
+  // --- Itinerary Day Filter Tabs ---
+  const dayTabButtons = document.querySelectorAll(".timeline-tab-btn");
+  const dayGroups = document.querySelectorAll(".itinerary-day-group");
+
+  dayTabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      dayTabButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const filterDay = btn.getAttribute("data-day");
+
+      dayGroups.forEach((group) => {
+        if (filterDay === "all" || group.getAttribute("data-day") === filterDay) {
+          group.style.display = "block";
+        } else {
+          group.style.display = "none";
+        }
+      });
+    });
+  });
+
+  // --- FAQ Accordion ---
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    const questionBtn = item.querySelector(".faq-question");
+    if (questionBtn) {
+      questionBtn.addEventListener("click", () => {
+        const isOpen = item.classList.contains("active");
+        faqItems.forEach((other) => other.classList.remove("active"));
+        if (!isOpen) {
+          item.classList.add("active");
+        }
+      });
+    }
+  });
+
+  // --- Photo Gallery & Mosaic Lightbox ---
+  const lightboxModal = document.getElementById("lightboxModal");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const clickablePhotos = document.querySelectorAll(".gallery-item, .mosaic-item");
+
+  clickablePhotos.forEach((item) => {
+    item.addEventListener("click", () => {
+      const img = item.querySelector("img");
+      const caption = item.querySelector(".gallery-overlay span, .mosaic-overlay span");
+      if (img && lightboxModal && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || "Trekflix Community Photo";
+        if (lightboxCaption) {
+          lightboxCaption.textContent = caption ? caption.textContent : "Trekflix Adventure";
+        }
+        lightboxModal.classList.add("active");
       }
+    });
+  });
 
-      const [cy, cm, cd] = checkinVal.split("-").map(Number);
-      const [coy, com, cod] = checkoutVal.split("-").map(Number);
-      const checkinDate = new Date(cy, cm - 1, cd);
-      const checkoutDate = new Date(coy, com - 1, cod);
-      const checkinDay = checkinDate.getDay();
+  if (lightboxClose) {
+    lightboxClose.addEventListener("click", () => {
+      lightboxModal.classList.remove("active");
+    });
+  }
 
-      if (checkinDate < today) {
-        alert("Check-in date cannot be in the past.");
-        return;
+  if (lightboxModal) {
+    lightboxModal.addEventListener("click", (e) => {
+      if (e.target === lightboxModal) {
+        lightboxModal.classList.remove("active");
       }
+    });
+  }
 
-      if (checkinDay !== 5 && checkinDay !== 6) {
-        alert("Check-in is only available on Friday or Saturday.");
-        return;
-      }
+  // --- Booking & Community Modals ---
+  const bookModal = document.getElementById("bookingModal");
+  const communityModal = document.getElementById("communityModal");
+  const openModalBtns = document.querySelectorAll(".open-booking-modal-btn");
+  const openCommunityBtns = document.querySelectorAll(".open-community-modal-btn");
+  const closeModalBtns = document.querySelectorAll(".close-booking-modal-btn, .close-community-modal-btn");
+  const tripBookingForm = document.getElementById("tripBookingForm");
+  const communityJoinForm = document.getElementById("communityJoinForm");
+  const newsletterForm = document.getElementById("newsletterForm");
+  const toastMsg = document.getElementById("toastMsg");
 
-      if (checkoutDate <= checkinDate) {
-        alert("Check-out date must be after the check-in date.");
-        return;
-      }
+  function showToast(msg) {
+    if (toastMsg) {
+      toastMsg.textContent = msg;
+      toastMsg.classList.add("show");
+      setTimeout(() => {
+        toastMsg.classList.remove("show");
+      }, 5000);
+    }
+  }
 
-      const nights = Math.round((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
-      let target = "#one-day";
-      let type = "1-day";
-      if (nights === 2) {
-        target = "#two-day";
-        type = "2-day";
-      } else if (nights >= 3) {
-        target = "#three-day";
-        type = "3-day";
-      }
+  openModalBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (bookModal) bookModal.classList.add("open");
+    });
+  });
 
-      const element = document.querySelector(target);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
+  openCommunityBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (communityModal) communityModal.classList.add("open");
+    });
+  });
 
-      alert(`Showing ${type} trips from ${checkinVal} to ${checkoutVal}.`);
+  closeModalBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (bookModal) bookModal.classList.remove("open");
+      if (communityModal) communityModal.classList.remove("open");
+    });
+  });
+
+  [bookModal, communityModal].forEach((modal) => {
+    if (modal) {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("open");
+        }
+      });
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if (lightboxModal) lightboxModal.classList.remove("active");
+      if (bookModal) bookModal.classList.remove("open");
+      if (communityModal) communityModal.classList.remove("open");
+    }
+  });
+
+  if (tripBookingForm) {
+    tripBookingForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("bookName") ? document.getElementById("bookName").value : "Trekkers";
+      const count = document.getElementById("bookCount") ? document.getElementById("bookCount").value : "1";
+      const phone = document.getElementById("bookPhone") ? document.getElementById("bookPhone").value : "";
+
+      if (bookModal) bookModal.classList.remove("open");
+      showToast(`Thanks ${name}! Booking request received for ${count} slot(s). Our trek leader will contact ${phone} shortly.`);
+      tripBookingForm.reset();
+    });
+  }
+
+  if (communityJoinForm) {
+    communityJoinForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("commName") ? document.getElementById("commName").value : "Traveler";
+      if (communityModal) communityModal.classList.remove("open");
+      showToast(`Welcome to Trekflix Community, ${name}! You're now subscribed to weekend batch updates & secret sunrise invites.`);
+      communityJoinForm.reset();
     });
   }
 
   if (newsletterForm) {
     newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("Thanks for subscribing! We will share our best trekking deals with you.");
+      showToast("Thank you for joining Trekflix! Check your inbox for our latest weekend adventure guide.");
       newsletterForm.reset();
     });
   }

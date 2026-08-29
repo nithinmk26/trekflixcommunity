@@ -1,0 +1,21 @@
+{
+  "name": "trekflixcommunity",
+  "version": "1.0.0",
+  "description": "Trekflix Community - India's Premier Weekend Trekking & Adventure Travel Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 .",
+    "serve": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "trekking",
+    "bangalore",
+    "karnataka",
+    "travel",
+    "adventure",
+    "weekend-trips"
+  ],
+  "author": "Trekflix Community",
+  "license": "MIT"
+}
