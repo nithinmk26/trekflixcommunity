@@ -10,18 +10,20 @@
   <meta property="og:description" content="Discover handpicked weekend sunrise treks, Western Ghats backpacking trips, and a vibrant community of solo travelers & nature lovers.">
   <meta property="og:image" content="hero.jpg">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <meta name="theme-color" content="#102b24">
+  <link rel="preload" as="image" href="hero.jpg">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
+  <a class="skip-link" href="#tripsSection">Skip to adventures</a>
   <!-- Top Bar -->
   <div class="top-bar">
     <div class="container top-bar-inner">
       <div class="top-bar-left">
-        <span>✨ Weekend Batches Filling Fast! Next departures this Friday night</span>
+        <span>Less screen time. More summit time. <a href="#batches">Find your next departure &rarr;</a></span>
       </div>
       <div class="top-bar-right">
         <a href="tel:+918984462959">📞 +91 89844 62959</a>
-        <a href="mailto:trekflixcommunity@gmail.com">✉️ trekflixcommunity@gmail.com</a>
         <a href="https://wa.me/918984462959?text=Hi%20Trekflix!%20I%20want%20to%20know%20about%20upcoming%20weekend%20treks." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
       </div>
     </div>
@@ -64,20 +66,56 @@
   <header class="hero" id="home">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <div class="hero-community-badge">
-        <span>🌲</span> #1 Rated Adventure Travel Community in Karnataka
-      </div>
-
-      <h1>Escape the Ordinary.<br>Trek with Community.</h1>
-      <p>
-        Handpicked weekend sunrise treks, misty Western Ghats backpacking journeys, and unforgettable campfire nights curated for solo travelers, friends, and nature enthusiasts.
-      </p>
-
-
-      <!-- Action Buttons -->
-      <div class="hero-btn-group">
-        <a href="#tripsSection" class="btn-primary">Explore Weekend Trips ↓</a>
-        <button class="btn-secondary open-community-modal-btn">Join Community 💬</button>
+      <div class="hero-editorial">
+        <div class="hero-copy">
+          <div class="hero-community-badge"><span class="status-dot" aria-hidden="true"></span> OUT OF OFFICE. INTO THE WILD.</div>
+          <h1>A little wilderness.<br>A whole lot of <em>life.</em></h1>
+          <p>Trade the everyday for misty mountains, golden sunrises, and people who feel like your people. Your next great weekend starts here.</p>
+          <div class="hero-btn-group">
+            <a href="#tripsSection" class="btn-primary">Find your adventure <span aria-hidden="true">↗</span></a>
+            <button class="btn-secondary open-community-modal-btn">Meet your community <span aria-hidden="true">&rarr;</span></button>
+          </div>
+          <div class="hero-footnote"><span class="hero-footnote-line" aria-hidden="true"></span> Curated escapes from Bengaluru. Memories that stay.</div>
+        </div>
+        <figure class="trail-scene" id="trailScene" aria-labelledby="trailSceneCaption">
+          <div class="trail-scene-header"><span>THE WEEKEND EDIT / 01</span><span class="trail-scene-label">TRAIL DREAMING</span></div>
+          <svg class="trail-art" viewBox="0 0 480 440" fill="none" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="trailSky" x1="240" y1="0" x2="240" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="#15392f"/><stop offset="1" stop-color="#6c8368"/></linearGradient>
+              <radialGradient id="trailGlow"><stop stop-color="#f0ce91" stop-opacity=".35"/><stop offset="1" stop-color="#f0ce91" stop-opacity="0"/></radialGradient>
+              <linearGradient id="trailForeground" x1="240" y1="210" x2="240" y2="440" gradientUnits="userSpaceOnUse"><stop stop-color="#285844"/><stop offset="1" stop-color="#102b24"/></linearGradient>
+              <clipPath id="trailFrame"><rect width="480" height="440" rx="8"/></clipPath>
+            </defs>
+            <g clip-path="url(#trailFrame)">
+              <path fill="url(#trailSky)" d="M0 0h480v440H0z"/>
+              <g class="trail-contours" stroke="#e0e7c8" stroke-opacity=".1">
+                <ellipse cx="390" cy="88" rx="155" ry="92"/><ellipse cx="390" cy="88" rx="182" ry="117"/><ellipse cx="390" cy="88" rx="211" ry="142"/><ellipse cx="390" cy="88" rx="240" ry="167"/>
+              </g>
+              <circle class="trail-glow" cx="325" cy="118" r="128" fill="url(#trailGlow)"/>
+              <circle class="trail-sun" cx="325" cy="118" r="37" fill="#e9c589"/>
+              <circle cx="325" cy="118" r="49" stroke="#e9c589" stroke-opacity=".25"/>
+              <g class="trail-cloud trail-cloud-far" stroke="#d7e0cb" stroke-opacity=".35" stroke-linecap="round">
+                <path d="M52 99h75m-52 8h94m194 73h77"/><path d="M356 190h57"/>
+              </g>
+              <g class="trail-ridge-back"><path d="M-30 288 67 182l58 51 89-134 112 133 58-74 126 134v178H-30Z" fill="#71927c"/><path d="m214 99 112 133-68-29-30-55-39 34Z" fill="#aec0a0" fill-opacity=".6"/><path d="m67 182 58 51-39-8Z" fill="#b4c2a1" fill-opacity=".5"/></g>
+              <g class="trail-ridge-mid"><path d="M-30 329 94 253l67 28 79-97 80 81 65-25 125 79v151H-30Z" fill="#416e55"/><path d="m240 184 80 81-43-16-25-26-23 23-33-8Z" fill="#8faa83"/></g>
+              <path d="M-30 385 86 316l86 19 116-114 63 90 67-16 92 64v111H-30Z" fill="url(#trailForeground)"/>
+              <g class="trail-cloud trail-cloud-near" stroke="#dce4d0" stroke-opacity=".25" stroke-linecap="round"><path d="M-30 279H92m-53 10h105m200 40h150m-113 10h67"/></g>
+              <path class="trail-route-base" d="M92 408C104 363 184 394 195 352S267 326 250 285 274 254 288 221" stroke="#e8bb82" stroke-opacity=".25" stroke-width="2" stroke-dasharray="3 7"/>
+              <path class="trail-route" pathLength="1" d="M92 408C104 363 184 394 195 352S267 326 250 285 274 254 288 221" stroke="#f2d3a0" stroke-width="2" stroke-linecap="round"/>
+              <circle class="trail-traveler" r="5" fill="#fff4d8" stroke="#e8bb82" stroke-width="6" stroke-opacity=".3"/>
+              <circle class="trail-summit-ring" cx="288" cy="221" r="13" stroke="#efc98a"/>
+              <circle cx="288" cy="221" r="4" fill="#efc98a"/>
+              <path d="M288 215v-25l17 6-17 6" stroke="#efc98a" stroke-width="1.5" stroke-linejoin="round"/>
+              <g fill="#e0e8d3" font-family="system-ui, sans-serif" font-size="9" letter-spacing="2"><text x="30" y="40">A DIFFERENT KIND OF HIGH</text><text x="312" y="224">THE SUMMIT</text><text x="32" y="411">START</text></g>
+              <g transform="translate(422 46)" stroke="#d8dcbf" stroke-opacity=".7"><circle r="17"/><path d="M0-12v24m-12-12h24"/><path class="trail-compass" d="m0-12 4 16-4-3-4 3Z" fill="#e8bb82" stroke="none"/></g>
+            </g>
+          </svg>
+          <figcaption id="trailSceneCaption">
+            <a class="trail-destination-link" href="chikmagalur.html"><span><small>FROM CITY LIGHTS TO SUMMIT SUNRISES</small><strong>Chikmagalur is calling.</strong></span><span class="destination-arrow" aria-hidden="true">↗</span></a>
+            <div class="trail-scene-footer"><span>2 days. A fresh perspective.</span><button class="motion-toggle" id="motionToggle" type="button" aria-controls="trailScene" aria-pressed="false" hidden>Pause motion</button></div>
+          </figcaption>
+        </figure>
       </div>
 
       <!-- Interactive Search & Discovery Widget -->
@@ -113,13 +151,8 @@
           </select>
         </div>
 
-        <div class="field">
-          <label for="departureDate">Preferred Weekend</label>
-          <input type="date" id="departureDate">
-        </div>
-
         <button type="submit" class="btn-search">
-          <span>🔍</span> Find Trips
+          Find my escape <span aria-hidden="true">↗</span>
         </button>
       </form>
     </div>
@@ -127,27 +160,31 @@
 
   <!-- Main Trip Discovery Section -->
   <main>
+    <div class="trail-strip" aria-label="The Trekflix experience">
+      <div class="container trail-strip-inner"><span>GOOD WEEKENDS START OUTSIDE</span><span>Small groups. Big memories.</span><span>Local trails. Thoughtful stays.</span><span>Come solo. Leave connected.</span></div>
+    </div>
     <section class="trips" id="tripsSection">
       <div class="container">
         <div class="section-header">
-          <span class="tag">Upcoming Getaways</span>
-          <h2>Explore Trending Trips from Bengaluru</h2>
-          <p>Carefully planned itineraries, comfortable transportation, verified homestays & experienced trip leaders.</p>
+          <span class="tag">01 / Find Your Escape</span>
+          <h2>Great weekends.<br><em>Even better stories.</em></h2>
+          <p>A sunrise close to home or two days off the grid. Handpicked adventures, with all the details taken care of.</p>
         </div>
 
         <!-- Filter Pills Bar -->
         <div class="filter-pills-bar">
           <button class="filter-pill active" data-filter="all">All Adventures</button>
-          <button class="filter-pill" data-filter="1day">🌅 1-Day Sunrise Treks</button>
-          <button class="filter-pill" data-filter="2day">🏕️ 2-Day Weekend Escapes</button>
-          <button class="filter-pill" data-filter="trending">🔥 Popular Trending</button>
+          <button class="filter-pill" data-filter="1day">Sunrise treks</button>
+          <button class="filter-pill" data-filter="2day">Weekend escapes</button>
+          <button class="filter-pill" data-filter="trending">Community favourites</button>
         </div>
+        <p class="trip-results" id="tripResults" role="status" aria-live="polite">5 adventures. Where will you go?</p>
 
         <!-- Trip Cards Grid -->
         <div class="card-grid" id="tripCardGrid">
           
           <!-- Chikmagalur Backpacking Card -->
-          <a href="chikmagalur.html" class="feature-card" data-category="2day" data-location="Chikmagalur" data-duration="2day" data-difficulty="moderate">
+          <a href="chikmagalur.html" class="feature-card" data-trending="true" data-category="2day" data-location="Chikmagalur" data-duration="2day" data-difficulty="moderate">
             <div class="feature-image" style="background-image: url('chikmagalur.jpg');">
               <span class="badge">-28% OFF</span>
               <span class="difficulty-badge">Easy - Mod</span>
@@ -179,7 +216,7 @@
           </a>
 
           <!-- Wayanad Weekend Tour Card -->
-          <a href="wayanad.html" class="feature-card" data-category="2day" data-location="Wayanad" data-duration="2day" data-difficulty="easy">
+          <a href="wayanad.html" class="feature-card" data-trending="true" data-category="2day" data-location="Wayanad" data-duration="2day" data-difficulty="easy">
             <div class="feature-image" style="background-image: url('wayanad.jpg');">
               <span class="badge">-28% OFF</span>
               <span class="difficulty-badge">Easy</span>
@@ -211,7 +248,7 @@
           </a>
 
           <!-- Uttari Betta Sunrise Trek Card -->
-          <a href="uttari-betta.html" class="feature-card" data-category="1day" data-location="Huthridurga" data-duration="1day" data-difficulty="easy">
+          <a href="uttari-betta.html" class="feature-card" data-trending="true" data-category="1day" data-location="Huthridurga" data-duration="1day" data-difficulty="easy">
             <div class="feature-image" style="background-image: url('uttari-betta.jpg');">
               <span class="badge">-27% OFF</span>
               <span class="difficulty-badge">Easy</span>
@@ -321,44 +358,44 @@
     <section class="section-padding bg-white" id="why-us">
       <div class="container">
         <div class="section-header">
-          <span class="tag">The Trekflix Difference</span>
-          <h2>Why Travel with Trekflix Community?</h2>
-          <p>We are more than just a booking portal — we are a passionate tribe of explorers making travel safe, accessible, and unforgettable.</p>
+          <span class="tag">02 / The Trekflix Way</span>
+          <h2>Not just a trip.<br><em>A feeling of belonging.</em></h2>
+          <p>The best part isn't always the view. It's the people beside you, and the little details that let you enjoy every moment.</p>
         </div>
 
         <div class="why-us-grid">
           <div class="why-us-card">
-            <div class="why-icon">🛡️</div>
+            <div class="why-icon" aria-hidden="true">01</div>
             <h4>Certified & Friendly Leaders</h4>
             <p>Every trek is accompanied by certified, wilderness first-aid trained trek leads who manage logistics so you can purely enjoy the trail.</p>
           </div>
 
           <div class="why-us-card">
-            <div class="why-icon">🤝</div>
+            <div class="why-icon" aria-hidden="true">02</div>
             <h4>Solo Traveler Friendly</h4>
             <p>Over 60% of our community joins solo. From icebreakers to group campfires, you will arrive alone and leave with lifelong adventure friends.</p>
           </div>
 
           <div class="why-us-card">
-            <div class="why-icon">🏡</div>
+            <div class="why-icon" aria-hidden="true">03</div>
             <h4>Handpicked Scenic Stays</h4>
             <p>We partner directly with verified coffee estate homestays and private campsites ensuring hygienic washrooms, cozy beds, and safe environments.</p>
           </div>
 
           <div class="why-us-card">
-            <div class="why-icon">🍲</div>
+            <div class="why-icon" aria-hidden="true">04</div>
             <h4>Delicious Regional Meals</h4>
             <p>Savor authentic Malnad, Kerala, and Karnataka specialties prepared hot and fresh, fueling you with the best local flavors.</p>
           </div>
 
           <div class="why-us-card">
-            <div class="why-icon">🌿</div>
+            <div class="why-icon" aria-hidden="true">05</div>
             <h4>Eco-Conscious & Plastic-Free</h4>
-            <p>We practice strict Leave No Trace outdoor principles, organinzing clean-up drives and promoting responsible sustainable travel.</p>
+            <p>We practice strict Leave No Trace outdoor principles, organizing clean-up drives and promoting responsible sustainable travel.</p>
           </div>
 
           <div class="why-us-card">
-            <div class="why-icon">🚌</div>
+            <div class="why-icon" aria-hidden="true">06</div>
             <h4>Multiple Bangalore Pickups</h4>
             <p>12+ convenient pickup spots across Bangalore including Silk Board, Indiranagar, Marathahalli, BTM, and Mysore Road.</p>
           </div>
@@ -370,12 +407,12 @@
     <section class="section-padding bg-light" id="batches">
       <div class="container">
         <div class="section-header">
-          <span class="tag">Fixed Departures</span>
-          <h2>Upcoming Weekend Batches</h2>
-          <p>Check live dates and reserve your slot before seats fill up.</p>
+          <span class="tag">03 / Make Weekend Plans</span>
+          <h2>Your next <em>out-of-office.</em></h2>
+          <p>Explore our regular departure schedule. Chat with us to confirm your preferred date and availability.</p>
         </div>
 
-        <div class="batches-table-wrapper">
+        <div class="batches-table-wrapper" tabindex="0" role="region" aria-label="Weekend departure schedule. Scroll horizontally on smaller screens.">
           <table class="batches-table">
             <thead>
               <tr>
@@ -438,8 +475,8 @@
     <section class="section-padding bg-white" id="stories">
       <div class="container">
         <div class="section-header">
-          <span class="tag">Community Love</span>
-          <h2>Stories from Fellow Trekkers</h2>
+          <span class="tag">04 / From The Trail</span>
+          <h2>The views bring you.<br><em>The people bring you back.</em></h2>
           <p>Real stories, unfiltered memories, and 5-star experiences shared by the Trekflix family.</p>
         </div>
 
@@ -490,9 +527,9 @@
     <section class="section-padding bg-light" id="community">
       <div class="container">
         <div class="section-header">
-          <span class="tag">#TrekflixTrail</span>
-          <h2>Trail Moments Captured by Trekkers</h2>
-          <p>Click on any photo to view in full resolution.</p>
+          <span class="tag">05 / The Camera Roll</span>
+          <h2>Less scrolling. <em>More of this.</em></h2>
+          <p>Little moments from life outside. Tap a photograph to take a closer look.</p>
         </div>
 
         <div class="community-mosaic-grid">
@@ -593,13 +630,11 @@
     <section class="cta" id="contact">
       <div class="container cta-inner">
         <div class="cta-text">
-          <h2>Ready for your next weekend escape?</h2>
-          <p>Join thousands of trekkers on secret trails, sunrise peaks, and backpacking getaways. Get instant trip updates on WhatsApp.</p>
+          <span class="tag">YOUR WEEKEND IS CALLING</span>
+          <h2>Go somewhere.<br><em>Feel something.</em></h2>
+          <p>New trails. New friends. A very different Monday story. Join the community for your next escape.</p>
         </div>
-        <form class="cta-form" id="newsletterForm">
-          <input type="email" placeholder="Enter your email or WhatsApp number" required>
-          <button type="submit" class="btn-primary">Join Community</button>
-        </form>
+        <a class="btn-primary cta-community-link" href="https://wa.me/918984462959?text=Hi%20Trekflix!%20I%20would%20like%20to%20join%20the%20community%20and%20get%20weekend%20trip%20updates." target="_blank" rel="noopener noreferrer">Join us on WhatsApp <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
@@ -701,6 +736,6 @@
   <!-- Toast Notification Feedback -->
   <div class="toast-msg" id="toastMsg"></div>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
